@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'videoplayer.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(595, 430)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setGeometry(QtCore.QRect(20, 160, 241, 31))
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(20, 20, 551, 111))
+        self.groupBox.setObjectName("groupBox")
+        self.pushButton = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton.setGeometry(QtCore.QRect(20, 40, 151, 51))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_2.setGeometry(QtCore.QRect(200, 40, 151, 51))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_3.setGeometry(QtCore.QRect(380, 40, 151, 51))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_2.setGeometry(QtCore.QRect(20, 220, 551, 121))
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.pushButton_4 = QtWidgets.QPushButton(self.groupBox_2)
+        self.pushButton_4.setGeometry(QtCore.QRect(20, 40, 191, 61))
+        self.pushButton_4.setObjectName("pushButton_4")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 595, 28))
+        self.menubar.setObjectName("menubar")
+        self.menuFile = QtWidgets.QMenu(self.menubar)
+        self.menuFile.setObjectName("menuFile")
+        self.menuHelp = QtWidgets.QMenu(self.menubar)
+        self.menuHelp.setObjectName("menuHelp")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionExit = QtWidgets.QAction(MainWindow)
+        self.actionExit.setObjectName("actionExit")
+        self.actionHelp = QtWidgets.QAction(MainWindow)
+        self.actionHelp.setObjectName("actionHelp")
+        self.actionAbout_File = QtWidgets.QAction(MainWindow)
+        self.actionAbout_File.setObjectName("actionAbout_File")
+        self.menuFile.addAction(self.actionAbout_File)
+        self.menuFile.addAction(self.actionExit)
+        self.menuHelp.addAction(self.actionHelp)
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuHelp.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "Boosting"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "MIL"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "KCF"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "TLD"))
+        self.comboBox.setItemText(4, _translate("MainWindow", "MedianFlow"))
+        self.comboBox.setItemText(5, _translate("MainWindow", "GOTURN"))
+        self.groupBox.setTitle(_translate("MainWindow", "Video Control"))
+        self.pushButton.setText(_translate("MainWindow", "Pause"))
+        self.pushButton_2.setText(_translate("MainWindow", "Capture"))
+        self.pushButton_3.setText(_translate("MainWindow", "Restart"))
+        self.groupBox_2.setTitle(_translate("MainWindow", "File Control"))
+        self.pushButton_4.setText(_translate("MainWindow", "OpenFile"))
+        self.menuFile.setTitle(_translate("MainWindow", "File"))
+        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
+        self.actionExit.setText(_translate("MainWindow", "Exit"))
+        self.actionHelp.setText(_translate("MainWindow", "About Help"))
+        self.actionAbout_File.setText(_translate("MainWindow", "About File"))
+
