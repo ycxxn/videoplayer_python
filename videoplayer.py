@@ -14,12 +14,15 @@ class VideoPlayer:
         return self.cap.get(cv2.CAP_PROP_POS_FRAMES)
 
     def restart(self):
+        # if self.isStop == True:
+        #     self.isStop = False
         self.cap.set(cv2.CAP_PROP_POS_FRAMES,0)
+        # self.cap.set(cv2.CAP_PROP_POS_MSEC)
     
     def saveImg(self,frame):
         cv2.imwrite("image.jpg",frame)
 
-player = VideoPlayer("video.mp4")
+# player = VideoPlayer("video.mp4")
 
 # i=0
 # while(1):
