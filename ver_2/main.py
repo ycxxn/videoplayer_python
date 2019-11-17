@@ -26,11 +26,11 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.comboBox.activated.connect(self.combo)
 
     def button_stop(self):
-        if player.isStop:
-            player.isStop = False
+        if player.isPause:
+            player.isPause = False
             self.statusbar.showMessage("Click Video Start")
         else:
-            player.isStop = True
+            player.isPause = True
             self.statusbar.showMessage("Click Video Pause")
 
     def button_capture(self):
