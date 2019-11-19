@@ -5,11 +5,32 @@ class CVideoPlayer:
         self.isPause = False
         self.isStop = True
 
+        # Mouse Event
+        self.drawing = False
+        self.mode = True 
+        self.ix,self.iy = -1,-1
+        self.roi_list = []
+        #
+
     def draw_(self,event,x,y,flags,param):
-        if event == cv2.EVENT_LBUTTONDOWN:
-            print("Button down")
-        if event == cv2.EVENT_LBUTTONUP:
-            print("Button up")
+
+        if event == cv2.EVENT_LBUTTONDOWN :
+            # self.drawing = True
+            # if self.drawing == True:
+            self.ix,self.iy = x,y
+
+        elif event == cv2.EVENT_LBUTTONUP:
+            # self.drawing = False
+            # if self.drawing == True:
+            cv2.rectangle(self.frame,(self.ix,self.iy),(x,y),(255,0,0),1)
+            # print(self.ix,self.iy,x,y)
+            # print("xmin:{xmin} ymin:{ymin} xmax:{xmax} ymax:{ymax}".format(xmin=self.ix,ymin=self.iy,xmax=x,ymax=y))
+            self.roi_list.append([self.ix,self.iy,x,y])
+                # print(self.roi_list)
+                # self.ix,self.iy=-1,-1
+            # self.drawing = False
+        if event == cv2.EVENT_MBUTTONDOWN:
+            self.roi_list = []
 
     def SaveImg(self):
         cv2.imwrite("image.jpg",self.frame)
@@ -25,6 +46,9 @@ class CVideoPlayer:
         while(1):
             if self.isPause == False:
                 ret, self.frame = self.cap.read()
+            if ret == False:
+                break
+            print(self.roi_list)
             cv2.imshow("frame",self.frame)
             cv2.setMouseCallback('frame',self.draw_)
             if cv2.waitKey(24) & 0xFF == ord('q'):
